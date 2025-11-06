@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 // Please add to Advertisement post type acf fields:
 // - show_from: Date picker
 // - show_to: Date picker
-// - is_scheduled: Checkbox
+// - is_scheduled: True/False field
 
 define('AT_REST_ADS_SCHEDULER_DIR', plugin_dir_path(__FILE__));
 
