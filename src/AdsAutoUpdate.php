@@ -63,9 +63,6 @@ class AdsAutoUpdate {
         
         $post_status = get_post_status($post_id);
         if ($post_status !== 'publish') return false;
-    
-        $is_scheduled = get_field('is_scheduled', $post_id, false);
-        if (!$is_scheduled) return false; 
 
         return true;
     }

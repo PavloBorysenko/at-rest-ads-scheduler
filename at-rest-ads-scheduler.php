@@ -30,8 +30,6 @@ add_action('acf/input/admin_footer', function() {
     <script>
     (function($){
         acf.add_filter('date_picker_args', function( args, field ){
-            console.log(field[0].dataset.name)
-            console.log(field.data('name'))
   
             if(field.data('name') === 'show_from' || field.data('name') === 'show_to') {
                 args.maxDate = +10000;

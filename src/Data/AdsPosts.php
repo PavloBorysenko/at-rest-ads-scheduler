@@ -49,11 +49,6 @@ class AdsPosts {
                 'compare' => '='
             ],
             [
-                    'key' => 'is_scheduled',
-                    'value' => "1",
-                    'compare' => '='
-            ],
-            [
                 'relation' => 'OR',
                 [
                     'key' => 'show_to',
@@ -78,11 +73,6 @@ class AdsPosts {
             [
                 'key' => 'is_active',
                 'value' => "0",
-                'compare' => '='
-            ],
-            [
-                'key' => 'is_scheduled',
-                'value' => "1",
                 'compare' => '='
             ],
             [
