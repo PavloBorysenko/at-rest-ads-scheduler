@@ -18,6 +18,7 @@ if (!defined('ABSPATH')) {
 // - is_scheduled: True/False field
 
 define('AT_REST_ADS_SCHEDULER_DIR', plugin_dir_path(__FILE__));
+define('AT_REST_ADS_SCHEDULER_URL', plugin_dir_url(__FILE__));
 
 require_once AT_REST_ADS_SCHEDULER_DIR . 'src/Data/AdsPosts.php';
 require_once AT_REST_ADS_SCHEDULER_DIR . 'src/AdsAutoUpdate.php';
@@ -27,18 +28,7 @@ new Supernova\AtRestScheduler\AdsAutoUpdate\AdsAutoUpdate();
 
 add_action('acf/input/admin_footer', function() {
     ?>
-    <script>
-    (function($){
-        acf.add_filter('date_picker_args', function( args, field ){
-  
-            if(field.data('name') === 'show_from' || field.data('name') === 'show_to') {
-                args.maxDate = +10000;
-                args.minDate = -10;
-            }            
-            return args;
-        });
-    })(jQuery);
-    </script>
+    <script src="<?php echo esc_url(AT_REST_ADS_SCHEDULER_URL . 'assets/js/datepicker.js'); ?>"></script>
     <?php
 }, 9999999);
   
