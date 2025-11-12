@@ -27,6 +27,9 @@ require_once AT_REST_ADS_SCHEDULER_DIR . 'src/AdsAutoUpdate.php';
 new Supernova\AtRestScheduler\AdsAutoUpdate\AdsAutoUpdate();
 
 add_action('acf/input/admin_footer', function() {
+    if (!isset($_GET['post_type']) || 'advertisement' !== $_GET['post_type']) {
+        return;
+    }
     ?>
     <script src="<?php echo esc_url(AT_REST_ADS_SCHEDULER_URL . 'assets/js/datepicker.js'); ?>"></script>
     <?php
